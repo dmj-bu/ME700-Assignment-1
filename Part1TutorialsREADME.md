@@ -11,7 +11,7 @@
 ## **Installation & Usage**
 ### **1️: Clone the Repository**
 ```bash
-git clone https://github.com/yourusername/newton-method-solver.git
+git clone https://github.com/dmj-bu/ME700-Assignment-1.git
 cd newton-method-solver
 ```
 
@@ -24,12 +24,11 @@ pip install -r requirements.txt
 ```bash
 python newtons_method_tutorial.py
 ```
-This will execute Newton’s Method on multiple real-world physics and engineering examples.
 
 ---
 
 ## **Example Problems**
-The following **mechanics-related problems** are solved using Newton’s Method.
+The following problems are solved using Newton’s Method.
 
 ### **Example 1: Beam Deflection (Cantilever Beam)**
 Find the deflection \( w \) for given **force, elastic modulus, moment of inertia, and length**.
