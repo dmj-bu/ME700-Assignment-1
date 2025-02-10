@@ -1,56 +1,41 @@
 import numpy as np
-import sympy as sp
 
-def evaluate_function(func_expr, w_value, variables):
-    """
-    Evaluates a symbolic function numerically at a given value of w.
-
-    Parameters:
-    - func_expr: A SymPy expression representing the function.
-    - w_value: Numerical value of w at which to evaluate.
-    - variables: Dictionary containing variable values.
-
-    Returns:
-    - Evaluated function value at w_value.
-    """
+def evaluate_function(func_str, w_value, variables):
+   
     try:
-        # Create a numerical function from the symbolic function
-        func_lambda = sp.lambdify(['w'] + list(variables.keys()), func_expr, modules=["numpy"])
-        return func_lambda(w_value, **variables)
+        variables["w"] = w_value  
+        return eval(func_str, {"np": np}, variables)
     except Exception as e:
         print(f"Error evaluating function: {e}")
         return None
 
-def newtons_method(func_str, w0, variables, tol=1e-6, max_iter=100):
-    """
-    Implements Newton's Method to find a root of func(w) using automatic differentiation.
-
-    Parameters:
-    - func_str: Function as a string.
-    - w0: Initial guess for the root.
-    - variables: Dictionary of additional variables.
-    - tol: Tolerance for stopping condition.
-    - max_iter: Maximum number of iterations.
-
-    Returns:
-    - Approximate root or None if convergence fails.
-    """
-    w = sp.Symbol('w')  # Define symbolic variable
-    func_expr = sp.sympify(func_str)  # Convert string to symbolic expression
-    dfunc_expr = sp.diff(func_expr, w)  # Compute derivative
+def newtons_method(func_str, dfunc_str, w0, variables, tol=1e-6, max_iter=500):
 
     iter_count = 0
     w_value = w0
+    w_min = 1e-3  # Minimum allowed w to avoid sqrt issues
 
     while iter_count < max_iter:
-        f_val = evaluate_function(func_expr, w_value, variables)
-        df_val = evaluate_function(dfunc_expr, w_value, variables)
+        f_val = evaluate_function(func_str, w_value, variables)
+        df_val = evaluate_function(dfunc_str, w_value, variables)
 
-        if df_val == 0:
-            print("Derivative is zero. Newton's method failed to converge.")
+        if df_val == 0 or df_val is None:
+            print("Error: Derivative is zero or undefined. Newton's method failed to converge.")
             return None
 
-        w_new = w_value - f_val / df_val
+        # Compute the Newton step
+        step = f_val / df_val
+
+        # Prevent Newton's Method from making extreme changes
+        if abs(step) > abs(w_value) * 0.5:  # Limits update to 50% of current value
+            step = np.sign(step) * abs(w_value) * 0.5
+
+        w_new = w_value - step
+
+        # Ensure w does not become non-physical
+        if w_new <= 0:
+            print(f"Warning: Adjusting w from {w_new} to minimum allowed {w_min}.")
+            w_new = w_min
 
         if abs(w_new - w_value) < tol:
             return w_new  # Root found
@@ -58,5 +43,6 @@ def newtons_method(func_str, w0, variables, tol=1e-6, max_iter=100):
         w_value = w_new
         iter_count += 1
 
-    print("Newton's method did not converge within the maximum number of iterations.")
+    print("Newton's method did not converge.")
     return None
+
