@@ -7,7 +7,7 @@ build-backend = "setuptools.build_meta"
 name = "setupexample"
 version = "0.0.0"
 authors = [
-  { name="Emma Lejeune", email="elejeune@bu.edu" },
+  { name="Daniel Jones", email="dmj@bu.edu" },
 ]
 description = "setupexample workflow"
 readme = "README.md"
@@ -26,5 +26,5 @@ dependencies = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/Lejeune-Lab-Graduate-Course-Materials/setup-example"
-"Bug Tracker" = "https://github.com/Lejeune-Lab-Graduate-Course-Materials/setup-example/issues"
+"Homepage" = "https://github.com/dmj-bu/ME700-Assignment-1"
+"Bug Tracker" = "https://github.com/dmj-bu/ME700-Assignment-1"
