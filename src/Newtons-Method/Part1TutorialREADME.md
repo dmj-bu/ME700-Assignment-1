@@ -149,5 +149,4 @@ variables = {"K": 1000, "omega": 50}
 root = newtons_method(func_str, dfunc_str, w0=0.5, variables=variables, tol=1e-4)
 ```
 
-
 ---
