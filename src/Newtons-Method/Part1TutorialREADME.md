@@ -1,11 +1,12 @@
 # Newton's Method Solver
 
 [![python](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/)
-![os](https://img.shields.io/badge/os-ubuntu%20|%20macos%20|%20windows-blue.svg)
-[![license](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/sandialabs/sibl#license)
+[![os](https://img.shields.io/badge/os-ubuntu%20|%20macos%20|%20windows-blue.svg)](https://github.com/dmj-bu/ME700-Assignment-1)
+[![license](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/dmj-bu/ME700-Assignment-1/blob/main/LICENSE)
 
-[![codecov](https://codecov.io/gh/Lejeune-Lab-Graduate-Course-Materials/bisection-method/graph/badge.svg?token=p5DMvJ6byO)](https://codecov.io/gh/Lejeune-Lab-Graduate-Course-Materials/bisection-method)
-[![tests](https://github.com/Lejeune-Lab-Graduate-Course-Materials/bisection-method/actions/workflows/tests.yml/badge.svg)](https://github.com/Lejeune-Lab-Graduate-Course-Materials/bisection-method/actions)
+[![codecov](https://codecov.io/gh/dmj-bu/ME700-Assignment-1/graph/badge.svg?token=YOUR_CODECOV_TOKEN)](https://codecov.io/gh/dmj-bu/ME700-Assignment-1)
+[![tests](https://github.com/dmj-bu/ME700-Assignment-1/actions/workflows/tests.yml/badge.svg)](https://github.com/dmj-bu/ME700-Assignment-1/actions/workflows/tests.yml)
+
 ---
 ## **Introduction**
 **How It Works**
