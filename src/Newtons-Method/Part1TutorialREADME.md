@@ -14,6 +14,11 @@
 git clone https://github.com/dmj-bu/ME700-Assignment-1.git
 cd ME700-Assignment-1
 ```
+## **create and activate Conda environment**
+```bash
+conda create --name me700-tutorial python=3.12
+conda activate me700-tutorial
+```
 
 ### **2: Install Dependencies**
 ```bash
@@ -143,5 +148,6 @@ dfunc_str = "-(0.5 * np.sqrt(K)) / (w**(3/2))"
 variables = {"K": 1000, "omega": 50}
 root = newtons_method(func_str, dfunc_str, w0=0.5, variables=variables, tol=1e-4)
 ```
+
 
 ---
