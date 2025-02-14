@@ -15,7 +15,7 @@ git clone https://github.com/dmj-bu/ME700-Assignment-1.git
 cd newton-method-solver
 ```
 
-### **2️2: Install Dependencies**
+### **2: Install Dependencies**
 ```bash
 pip install -r requirements.txt
 ```
