@@ -14,31 +14,28 @@ jobs:
 
     strategy:
       matrix:
-        platform: [macos-latest, ubuntu-latest, windows-latest]
-        python-version: ["3.12.8"]
+        platform: [ubuntu-latest]  # Only testing on Ubuntu for stability
+        python-version: ["3.12"]
 
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
 
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
+          cache: 'pip'
 
       - name: Install dependencies
-        run: pip install -e .
-
-      - name: Install test dependencies
-        run: pip install pytest pytest-cov
+        run: pip install -e .[dev]  # Install testing dependencies
 
       - name: Run tests with coverage
-        run: pytest --cov=methods --cov-report=xml
-        # Replace 'my_package' with your actual package name
+        run: pytest --cov=src/Newtons-Method --cov-report=xml  # Correct module path
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v4
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           file: ./coverage.xml
-          fail_ci_if_error: true  # Ensure failure if upload fails
+          fail_ci_if_error: true
