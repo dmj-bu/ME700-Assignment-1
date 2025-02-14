@@ -12,16 +12,17 @@
 ### **1️: Clone the Repository**
 ```bash
 git clone https://github.com/dmj-bu/ME700-Assignment-1.git
-cd newton-method-solver
+cd ME700-Assignment-1
 ```
 
 ### **2: Install Dependencies**
 ```bash
-pip install -r requirements.txt
+pip install -e .
 ```
 
 ### **3️: Run the Tutorial**
 ```bash
+cd src/Newtons-Method
 python newtons_method_tutorial.py
 ```
 
