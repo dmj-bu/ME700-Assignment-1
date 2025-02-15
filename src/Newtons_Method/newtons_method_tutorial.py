@@ -1,4 +1,4 @@
-from newtons_method_solver import newtons_method
+from Newtons_Method.newtons_method_solver import newtons_method
 import numpy as np
 
 def run_examples():
