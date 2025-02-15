@@ -34,8 +34,9 @@ def newtons_method(func_str, dfunc_str, w0, variables, tol=1e-6, max_iter=500):
 
         # Ensure w does not become non-physical
         if w_new <= 0:
-            print(f"Warning: Adjusting w from {w_new} to minimum allowed {w_min}.")
-            w_new = w_min
+             print(f"Warning: Adjusting w from {w_new} to minimum allowed {w_min}.")
+             return w_min  # Explicitly return here
+
 
         if abs(w_new - w_value) < tol:
             return w_new  # Root found
