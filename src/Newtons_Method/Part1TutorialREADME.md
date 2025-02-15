@@ -5,7 +5,7 @@
 [![license](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/dmj-bu/ME700-Assignment-1/blob/main/LICENSE)
 
 [![codecov](https://codecov.io/gh/dmj-bu/ME700-Assignment-1/graph/badge.svg?token=YOUR_CODECOV_TOKEN)](https://codecov.io/gh/dmj-bu/ME700-Assignment-1)
-[![tests](https://github.com/dmj-bu/ME700-Assignment-1/actions/workflows/tests.yml/badge.svg)](https://github.com/dmj-bu/ME700-Assignment-1/actions/workflows/tests.yml)
+[![Run Tests](https://github.com/dmj-bu/ME700-Assignment-1/actions/workflows/tests.yml/badge.svg)](https://github.com/dmj-bu/ME700-Assignment-1/actions/workflows/tests.yml)
 
 ---
 ## **Introduction**
