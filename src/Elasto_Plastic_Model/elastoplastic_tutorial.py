@@ -41,7 +41,11 @@ def run_examples():
         plt.title(f"Stress-Strain Response: {title}")
         plt.legend()
         plt.grid(True)
-        plt.show()
-
+        
+        # Only show plots if NOT running inside pytest
+        if "pytest" not in sys.modules:
+            plt.show()
+        else:
+            plt.close()  # Close figure to prevent blocking in CI
 if __name__ == "__main__":
     run_examples()
