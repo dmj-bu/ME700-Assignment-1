@@ -30,17 +30,25 @@ jobs:
       - name: Upgrade pip & Install dependencies
         run: |
           python -m pip install --upgrade pip
-          python -m pip install pytest pytest-cov
+          python -m pip install pytest pytest-cov matplotlib
           python -m pip install -e .[dev]
-          
-      - name: Set Matplotlib backend for all platforms
-        run: python -c "import matplotlib; matplotlib.use('Agg')"
-        
+
+      - name: Force Matplotlib to use Agg backend
+        run: |
+          echo "MPLBACKEND=Agg" >> $GITHUB_ENV  # Linux/macOS
+          echo "MPLBACKEND=Agg" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8  # Windows
+
       - name: Run tests with coverage
-        run: pytest --cov=src --cov-report=xml --cov-report=term
+        env:
+          DISPLAY: ":99"  # Prevent GUI errors
+          MPLBACKEND: "Agg"  # Ensure non-interactive Matplotlib
+        run: |
+          python -c "import matplotlib; matplotlib.use('Agg')"
+          pytest --cov=src --cov-report=xml --cov-report=term -o log_cli=true
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v4
         with:
           file: ./coverage.xml
           fail_ci_if_error: true
+
