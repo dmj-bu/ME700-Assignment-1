@@ -1,4 +1,5 @@
 import numpy as np
+import sys
 import matplotlib.pyplot as plt
 from Elasto_Plastic_Model.elastoplastic_solver import ElastoplasticSolver
 
@@ -47,5 +48,6 @@ def run_examples():
             plt.show()
         else:
             plt.close()  # Close figure to prevent blocking in CI
+
 if __name__ == "__main__":
     run_examples()
