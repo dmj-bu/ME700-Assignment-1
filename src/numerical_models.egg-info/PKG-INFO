@@ -1,0 +1,20 @@
+Metadata-Version: 2.2
+Name: numerical-models
+Version: 0.2.0
+Summary: A repository containing numerical solvers for Newton's Method and ElastoPlastic Models
+Author-email: Daniel Jones <dmj@bu.edu>
+Project-URL: Homepage, https://github.com/dmj-bu/ME700-Assignment-1
+Project-URL: Bug Tracker, https://github.com/dmj-bu/ME700-Assignment-1/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: matplotlib>=3.10.0
+Requires-Dist: numpy>=1.26.4
+Requires-Dist: scipy>=1.12.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.1.2; extra == "dev"
+Requires-Dist: pytest-cov>=3.0.0; extra == "dev"
+Requires-Dist: coverage; extra == "dev"
+Requires-Dist: codecov; extra == "dev"

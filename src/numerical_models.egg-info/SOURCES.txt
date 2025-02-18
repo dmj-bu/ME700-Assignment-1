@@ -1,0 +1,15 @@
+pyproject.toml
+src/Bisection_Method/bisection_solver.py
+src/Elasto_Plastic_Model/__init__.py
+src/Elasto_Plastic_Model/elastoplastic_solver.py
+src/Elasto_Plastic_Model/elastoplastic_tutorial.py
+src/Newtons_Method/__init__.py
+src/Newtons_Method/newtons_method_solver.py
+src/Newtons_Method/newtons_method_tutorial.py
+src/numerical_models.egg-info/PKG-INFO
+src/numerical_models.egg-info/SOURCES.txt
+src/numerical_models.egg-info/dependency_links.txt
+src/numerical_models.egg-info/requires.txt
+src/numerical_models.egg-info/top_level.txt
+tests/test_newtons_method.py
+tests/test_newtons_method_tutorial.py
