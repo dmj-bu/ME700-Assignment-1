@@ -11,5 +11,7 @@ src/numerical_models.egg-info/SOURCES.txt
 src/numerical_models.egg-info/dependency_links.txt
 src/numerical_models.egg-info/requires.txt
 src/numerical_models.egg-info/top_level.txt
+tests/test_elastoplastic_solver.py
+tests/test_elastoplastic_tutorial.py
 tests/test_newtons_method.py
 tests/test_newtons_method_tutorial.py
