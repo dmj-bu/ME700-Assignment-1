@@ -24,34 +24,23 @@ The solver is structured into two files:
 ### 1: Clone the Repository
 
 ```bash
-git clone https://github.com/your-repo/ElastoPlastic-Model.git
-cd ElastoPlastic-Model
+git clone https://github.com/dmj-bu/ME700-Assignment-1.git
+cd ME700-Assignment-1
+```
+## **create and activate Conda environment**
+```bash
+conda create --name me700-tutorial python=3.12
+conda activate me700-tutorial
 ```
 
-### 2: Create & Activate Virtual Environment
-
+### **2: Install Dependencies**
 ```bash
-conda create --name elastoplastic python=3.12
-conda activate elastoplastic
-```
-
-### 3: Install Dependencies using pyproject.toml
-
-First, ensure you have up to date pip installed:
-
-```bash
-pip install --upgrade pip
-```
-
-Then install dependencies:
-
-```bash
-pip install .
+pip install -e .
 ```
 
 ### 4: Run the Tutorial
-
 ```bash
+cd src/Elasto_Plastic_Model
 python elastoplastic_tutorial.py
 ```
 
